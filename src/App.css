@@ -1,0 +1,115 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.nav
+{
+    background-color: rosybrown;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 5rem;
+    position: fixed;
+    top: 0;
+    z-index: 5;
+}
+ul
+{
+    display: flex;
+}
+ul li
+{
+    list-style: none;
+    padding: 0 1rem;
+}
+a
+{
+    color: black;
+    text-decoration: none;
+}
+.cartbutton
+{
+    color: white;
+    background-color: red;
+    border-radius: 6px;
+    padding: 0.5rem 1rem;
+    margin-top: 10px;
+    display: inline-block;
+    position: absolute;
+    bottom: 25px;
+    left: 15px;
+}
+.container
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 100px 0;
+}
+.container .box
+{
+    width: 240px;
+    height: 330px;
+    margin: 25px;
+    padding: 20px;
+    position: relative;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.container img
+{
+    width: 120px;
+    height: 150px;
+    margin-left: 35px;
+}
+.box h1 {
+    margin: 20px 0;
+    font-size: 16px;
+}
+.box p
+{
+    margin-bottom: 10px;
+}
+.single
+{
+    margin-top: 100px;
+}
+.singlebutton
+{
+    color: white;
+    background-color: red;
+    border-radius: 6px;
+    padding: 0.5rem 1rem;
+    margin-top: 10px;
+    display: inline-block;
+}
+.containerbox
+{
+    width: 80%;
+    margin: auto;
+    margin-top: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.containerbox img
+{
+    width: 200px;
+    height: 300px;
+}
+.containerbox .des
+{
+    margin-left: 100px;
+}
+.containerbox p
+{
+    margin: 20px 0;
+}
+#cart
+{
+    margin-left: 20px;
+    margin-top: 70px;
+}

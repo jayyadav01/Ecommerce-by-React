@@ -1,0 +1,49 @@
+import React , { useState , useEffect , useContext } from 'react'
+import axios from 'axios'
+import { globalstate } from './App';
+import { Link } from 'react-router-dom';
+
+function Products() {
+    const [data,setdata] = useState([]);
+    const {cart,setcart} = useContext(globalstate);
+
+    useEffect(() => {
+        axios.get('https://fakestoreapi.com/products/').then((result) => {
+            console.log(result.data);
+            setdata(result.data);
+        })
+    } , [])
+
+    function handleCart(e,result) 
+    {
+        e.preventDefault();
+        setcart([...cart,result]);
+        console.log(cart);
+    }
+
+    function trimtitle(title)
+    {
+        return (title.length>18) ? title.slice(0,18) + '...' : title;
+    }
+  return (
+    <>
+        <div className='container'>
+            {
+                data.map((data,index) => {
+                    return(
+                        <div className='box' key={index}>
+                            <Link to={`/Product/${data.id}`}><img src={data.image}></img></Link>
+                            <h1><Link to={`/Product/${data.id}`}>{trimtitle(data.title)}</Link></h1>
+                            <p>$ {data.price}</p>
+                            <a className='cartbutton' href='' onClick={(e) => handleCart(e,data)}>Add to Cart</a>
+                        </div>
+                    )
+                })
+            }
+        </div>
+    </>
+  )
+}
+
+export default Products
+
