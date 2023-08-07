@@ -1,24 +1,32 @@
 import React , { useState , useEffect , useContext } from 'react'
 import axios from 'axios'
+import About from './About';
 import { globalstate } from './App';
 import { Link } from 'react-router-dom';
 
 function Products() {
     const [data,setdata] = useState([]);
     const {cart,setcart} = useContext(globalstate);
+    const [buttondisabled,setbuttondisabled] = useState(false)
 
     useEffect(() => {
+        
         axios.get('https://fakestoreapi.com/products/').then((result) => {
             console.log(result.data);
             setdata(result.data);
         })
     } , [])
 
-    function handleCart(e,result) 
+    function handleCart(e,result,index) 
     {
         e.preventDefault();
         setcart([...cart,result]);
         console.log(cart);
+
+        setbuttondisabled(cart.filter((product,id) => {
+            return ( (id!=index) ? setbuttondisabled(true) : ''
+            )
+        }))
     }
 
     function trimtitle(title)
@@ -27,6 +35,8 @@ function Products() {
     }
   return (
     <>
+        <About/> 
+        <h1 id='heading'>Products</h1>
         <div className='container'>
             {
                 data.map((data,index) => {
@@ -35,7 +45,11 @@ function Products() {
                             <Link to={`/Product/${data.id}`}><img src={data.image}></img></Link>
                             <h1><Link to={`/Product/${data.id}`}>{trimtitle(data.title)}</Link></h1>
                             <p>$ {data.price}</p>
-                            <a className='cartbutton' href='' onClick={(e) => handleCart(e,data)}>Add to Cart</a>
+                            
+                            <button className={buttondisabled ? 'disabled-button' : 'cartbutton'} 
+                            disabled={buttondisabled} href='' onClick={(e) => handleCart(e,data,index)}>Add to Cart</button>
+                        
+
                         </div>
                     )
                 })

@@ -14,6 +14,7 @@ function Header() {
                 <li><Link to='/Cart'>Cart <span>{cart.length}</span></Link></li>
             </ul>
         </div>
+        <div className='blank'></div>
     </>
   )
 }
