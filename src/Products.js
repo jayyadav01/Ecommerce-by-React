@@ -22,11 +22,6 @@ function Products() {
         e.preventDefault();
         setcart([...cart,result]);
         console.log(cart);
-
-        setbuttondisabled(cart.filter((product,id) => {
-            return ( (id!=index) ? setbuttondisabled(true) : ''
-            )
-        }))
     }
 
     function trimtitle(title)
@@ -42,13 +37,12 @@ function Products() {
                 data.map((data,index) => {
                     return(
                         <div className='box' key={index}>
+
                             <Link to={`/Product/${data.id}`}><img src={data.image}></img></Link>
                             <h1><Link to={`/Product/${data.id}`}>{trimtitle(data.title)}</Link></h1>
                             <p>$ {data.price}</p>
                             
-                            <button className={buttondisabled ? 'disabled-button' : 'cartbutton'} 
-                            disabled={buttondisabled} href='' onClick={(e) => handleCart(e,data,index)}>Add to Cart</button>
-                        
+                            <button className={buttondisabled ? 'disabled-button' : 'cartbutton'} href='' onClick={(e) => handleCart(e,data,index)}>Add to Cart</button>
 
                         </div>
                     )
