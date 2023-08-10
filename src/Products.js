@@ -42,7 +42,7 @@ function Products() {
                             <h1><Link to={`/Product/${data.id}`}>{trimtitle(data.title)}</Link></h1>
                             <p>$ {data.price}</p>
                             
-                            <button className={buttondisabled ? 'disabled-button' : 'cartbutton'} href='' onClick={(e) => handleCart(e,data,index)}>Add to Cart</button>
+                            <button className={'cartbutton'} href='' onClick={(e) => handleCart(e,data,index)}>Add to Cart</button>
 
                         </div>
                     )

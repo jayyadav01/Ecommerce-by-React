@@ -7,7 +7,6 @@ function SingleCartProduct() {
     const obj = useParams();
     const [SingleProduct,setSingleProduct] = useState([]);
     const {cart,setcart} = useContext(globalstate);
-    const [buttondisabled,setbuttondisabled] = useState(false)
 
     useEffect(() => {
         axios.get('https://fakestoreapi.com/products/' + obj.id).then((result) => {
@@ -21,7 +20,6 @@ function SingleCartProduct() {
         e.preventDefault();
         setcart([...cart,result]);
         console.log(cart);
-        setbuttondisabled(true);
     }
 
   return (
@@ -33,8 +31,7 @@ function SingleCartProduct() {
                     <p>{SingleProduct.category}</p>
                     <p>$ {SingleProduct.price}</p>
                     <p>{SingleProduct.description}</p>
-                    <button className={buttondisabled ? 'disabled-button' : 'singlebutton'} 
-                        disabled={buttondisabled} href='' onClick={(e) => handleCart(e,SingleProduct)}>Add to Cart</button>
+                    <button className={'singlebutton'} href='' onClick={(e) => handleCart(e,SingleProduct)}>Add to Cart</button>
                 </div>
           </div>
     </>
