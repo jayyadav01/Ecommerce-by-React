@@ -16,7 +16,7 @@ function Products() {
         })
     } , [])
 
-    function handleCart(e,result,index) 
+    function handleCart(e,result) 
     {
         e.preventDefault();
         setcart([...cart,result]);
@@ -41,7 +41,7 @@ function Products() {
                             <h1><Link to={`/Product/${data.id}`}>{trimtitle(data.title)}</Link></h1>
                             <p>$ {data.price}</p>
                             
-                            <button className={'cartbutton'} href='' onClick={(e) => handleCart(e,data,index)}>Add to Cart</button>
+                            <button className={'cartbutton'} href='' onClick={(e) => handleCart(e,data)}>Add to Cart</button>
 
                         </div>
                     )
