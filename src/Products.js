@@ -7,7 +7,6 @@ import { Link } from 'react-router-dom';
 function Products() {
     const [data,setdata] = useState([]);
     const {cart,setcart} = useContext(globalstate);
-    const [buttondisabled,setbuttondisabled] = useState(false)
 
     useEffect(() => {
         

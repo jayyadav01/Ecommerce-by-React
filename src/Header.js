@@ -11,7 +11,7 @@ function Header() {
             <h1><Link to='/'>Logo</Link></h1>
             <ul>
                 <li><Link to='/'>Home</Link></li>
-                <li><Link to='/Cart'>Cart <span>{cart.length}</span></Link></li>
+                <li><Link to='/Cart'>Cart <span>{cart.length}</span></Link></li> 
             </ul>
         </div>
         <div className='blank'></div>
