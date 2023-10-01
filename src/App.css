@@ -140,9 +140,11 @@ a
 }
 .singlebox
 {
-    width: 700px;
+    width: 500px;
     height: 200px;
-    margin: 20px 50px 0;
+    /* margin: 20px 50px 0; */
+    margin: auto;
+    margin-top: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -155,6 +157,7 @@ a
 .singlebox .des
 {
     width: 500px;
+    margin-left: 100px;
 }
 .singlebox h1
 {
@@ -229,17 +232,45 @@ a
         margin-top: 40px;
     }
     .des h1 {
-        font-size: 20px;
+        font-size: 18px;
     }
     .containerbox {
         margin-top: 40px;
     }
+    .singlebox
+    {
+        width: 350px;
+    }
+    .singlebox .des {
+        margin-left: 50px;
+    }
+    .singlebox img {
+        width: 80px;
+        height: 100px;
+    }
     
-    
+}
+@media screen and (max-width : 375px)
+{
+    .singlebox {
+        width: 300px;
+    }
+    .singlebox .des {
+        margin-left: 30px;
+    }
+    .des h1 {
+        font-size: 16px;
+    }
 }
 
 @media screen and (max-width : 320px)
 {
+    .singlebox {
+        width: 260px;
+    }
+    .des h1 {
+        font-size: 14px;
+    }
     .about h1 {
         margin-bottom: 20px;
         font-size: 24px;
