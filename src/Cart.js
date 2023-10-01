@@ -18,7 +18,9 @@ function Cart() {
             return (
               <>
                 <div className='singlebox' key={index}>
-                  <img src={cart.image}></img>
+                  <div className='pics'>
+                      <img src={cart.image}></img>
+                  </div>
                   <div className='des'>
                       <h1>{cart.title}</h1>
                       <p>{cart.category}</p>
