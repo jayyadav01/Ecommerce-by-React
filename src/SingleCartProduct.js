@@ -27,7 +27,7 @@ function SingleCartProduct() {
           <div className='containerbox'>
                 <img src={SingleProduct.image}></img>
                 <div className='des'>
-                    <h1>{SingleProduct.title}</h1>
+                    <h1 className='single_product_heading'>{SingleProduct.title}</h1>
                     <p>{SingleProduct.category}</p>
                     <p>$ {SingleProduct.price}</p>
                     <p>{SingleProduct.description}</p>

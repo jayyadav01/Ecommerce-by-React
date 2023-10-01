@@ -121,8 +121,7 @@ a
 }
 .about
 {
-    margin-top: 100px;
-    margin-left: 50px;
+    margin: 100px 50px 0;
 }
 .about h1
 {
@@ -143,8 +142,7 @@ a
 {
     width: 700px;
     height: 200px;
-    margin-top: 20px;
-    margin-left: 50px;
+    margin: 20px 50px 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -186,4 +184,67 @@ a
 {
     margin-top: 20px;
     margin-left: 20px;
+}
+
+
+@media screen and (max-width : 770px)
+{
+    .containerbox {
+        margin-top: 100px;
+    }
+    .containerbox img {
+        width: 170px;
+        height: 250px;
+    }
+    .des .single_product_heading
+    {
+        font-size: 25px;
+    }
+}
+
+@media screen and (max-width : 425px)
+{
+    .logo
+    {
+        font-size: 25px;
+    }
+    .nav {
+        padding: 0.5rem 3rem;
+    }
+    .about {
+        margin: 40px 50px 0;
+    }
+    #heading {
+        margin-bottom: 0px;
+    }
+    .containerbox {
+        flex-direction: column;
+    }
+    .containerbox img {
+        width: 120px;
+        height: 150px;
+    }
+    .containerbox .des {
+        margin-left: 0px;
+        margin-top: 40px;
+    }
+    .des h1 {
+        font-size: 20px;
+    }
+    .containerbox {
+        margin-top: 40px;
+    }
+    
+    
+}
+
+@media screen and (max-width : 320px)
+{
+    .about h1 {
+        margin-bottom: 20px;
+        font-size: 24px;
+    }
+    .nav {
+        padding: 0.5rem 2rem;
+    }    
 }
