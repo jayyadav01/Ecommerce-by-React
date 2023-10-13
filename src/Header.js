@@ -1,6 +1,6 @@
 import React from 'react'
 import { useContext } from 'react'
-import { globalstate } from './App'
+import { globalstate } from './App';
 import { Link } from 'react-router-dom';
 
 function Header() {
